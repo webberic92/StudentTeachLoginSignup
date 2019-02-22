@@ -1,0 +1,25 @@
+create table users(userid serial PRIMARY KEY, 
+firstname VARCHAR(20),
+lastname VARCHAR(20),
+email VARCHAR(30),
+password VARCHAR(20));
+
+create table roles(roleid serial primary key,
+userid int references users(userid),
+rolename varchar(20));
+
+
+commit;
+
+insert into  users  values(1,'ERIC', 'WEBB', 'webberic92@yahoo.com','password');
+insert into  users  values(2,'DERIC', 'SCHWEBB', 'schwebbderic92@yahoo.com','password');
+insert into roles values (1,1,'Teacher');
+insert into roles values (2,2,'Student');
+
+select * from users;
+select * from roles;
+
+
+
+commit;
+
